@@ -108,6 +108,14 @@ const App = () => {
             associated with the 1,000 EtherCards can.
           </p>
         </div>
+        <div>
+          <h2 className="font-bold text-xl">What does rsociety mean?</h2>
+          <p>
+            We're building the <strong>r</strong>edistribution society. Everyone
+            should get their share! Could also mean <strong>OUR</strong>society
+            ;)
+          </p>
+        </div>
       </div>
     </div>
   );
