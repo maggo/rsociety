@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <div className="p-6">
-      <h1 className="font-black uppercase text-[140px] leading-none text-[#ffd200] mb-8">
+      <h1 className="font-black uppercase text-9xl leading-none text-[#ffd200] mb-8">
         Join
         <br /> the
         <br /> redis-
