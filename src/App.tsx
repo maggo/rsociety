@@ -51,7 +51,7 @@ const App = () => {
           <p>
             The open-track prize is the main hackathon award. Every eligible
             project can be judged by anyone attending the event using their
-            Ether Card. The winning project will present at the closing ceremony
+            EtherCard. The winning project will present at the closing ceremony
             and the prize is 10k DAI. The catch? There is only one. Until now…
             When rsociety wins, everyone wins!
           </p>
@@ -63,19 +63,28 @@ const App = () => {
           <p>
             When rsociety wins the open track voting by majority vote, the prize
             money will be sent directly to the rsociety.eth smart contract. From
-            there everyone with an Ether Card (the one you received with your
-            badge) can claim their 10 DAI share of the pool. Any unclaimed
+            there everyone with an EtherCard (the one you received with your
+            badge) can claim their $10 DAI share of the pool. Any unclaimed
             assets will be distributed evenly and airdropped to claim00rs
           </p>
         </div>
         <div>
           <h2 className="font-bold text-xl">How does the claim work?</h2>
           <p>
-            After the voting has finished and the contract receives the 10k DAI
-            on Optimism. You will be able to connect your wallet, switch to OP
-            Network and claim the DAI. We drop enough “dust” ETH on every of the
-            1000 wallets to be able to claim the DAI without going the trouble
-            to loading it up first.
+            Upon securing the majority vote, the rsociety.eth smart contract
+            will be receiving the prize money on Optimism. ETHBerlin has
+            published a list of all{" "}
+            <a
+              href="https://github.com/ethb3rlin/attendees"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              public addresses for the 1,000 EtherCards
+            </a>{" "}
+            which make up to our allow-list. To claim to money you simply
+            connect your wallet to the Optimism Network and click the “Claim
+            your share” button on this page. Sign the transaction, voila, and
+            the money is yours.
           </p>
         </div>
         <div>
@@ -83,28 +92,20 @@ const App = () => {
             What happens to the unclaimed DAI?
           </h2>
           <p>
-            You will have 7 days to claim your 10 DAI, afterwards the unclaimed
+            You will have 7 days to claim your $10 DAI, afterwards the unclaimed
             DAI will be evenly distributed and airdropped to all addresses that
-            claimed the initial 10 DAI.
+            claimed the initial $10 DAI.
           </p>
         </div>
         <div>
           <h2 className="font-bold text-xl">Why should I trust you?</h2>
           <p>
-            {/* <a
-              href="https://github.com/ethb3rlin/attendees"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              All 1,000 ETH Berlin voter addresses are public.
-            </a>{" "} */}
-            Don&apos;t trust us, trust the code. Winning DAI will be transferred
-            to the smart contract address rsociety.eth. You can read the
-            contract code here (TODO)
+            Don&apos;t trust us, trust the code. The prize DAI will be directly
+            transferred to the smart contract address rsociety.eth. You can read
+            the contract code here (TODO)
             <br />
             TL;DR we can&apos;t withdraw the funds, only the addresses
-            associated with the 1000 Ether Cards can.
+            associated with the 1,000 EtherCards can.
           </p>
         </div>
       </div>
