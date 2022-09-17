@@ -19,7 +19,7 @@ const App = () => {
       <p className="text-2xl md:text-4xl text-white font-bold mb-8">
         Let&apos;s make hackathon prize money a public good.
         <br />
-        Everyone receives a $10 share of the open track prize, guaranteed.
+        Everyone receives a $10+ share of the open track prize, guaranteed.
         <br />
         We just need to win the vote. #hackthehack
       </p>
@@ -64,7 +64,7 @@ const App = () => {
             When rsociety wins the open track voting by majority vote, the prize
             money will be sent directly to the rsociety.eth smart contract. From
             there everyone with an EtherCard (the one you received with your
-            badge) can claim their $10 DAI share of the pool. Any unclaimed
+            badge) can claim their $10+ DAI share of the pool. Any unclaimed
             assets will be distributed evenly and airdropped to claim00rs
           </p>
         </div>
@@ -92,9 +92,9 @@ const App = () => {
             What happens to the unclaimed DAI?
           </h2>
           <p>
-            You will have 7 days to claim your $10 DAI, afterwards the unclaimed
-            DAI will be evenly distributed and airdropped to all addresses that
-            claimed the initial $10 DAI.
+            You will have 7 days to claim your $10+ DAI, afterwards the
+            unclaimed DAI will be evenly distributed and airdropped to all
+            addresses that claimed the initial $10+ DAI.
           </p>
         </div>
         <div>
