@@ -78,6 +78,34 @@ const App = () => {
           </p>
         </div>
         <div>
+          <h2 className="font-bold text-xl">How can I vote?</h2>
+          <ol className="list-decimal pl-6">
+            <li>
+              <a
+                href="https://mint.ethberlin.ooo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline text-[#ffd200]"
+              >
+                Mint your voting NFT
+              </a>{" "}
+              (make sure you're connected to Görli)
+            </li>
+            <li>
+              <a
+                href="https://vote.ethberlin.ooo/2022"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline text-[#ffd200]"
+              >
+                Check out the open votes
+              </a>{" "}
+              and chose your favorite projects
+            </li>
+            <li>Give rsociety all your votes! ;)</li>
+          </ol>
+        </div>
+        <div>
           <h2 className="font-bold text-xl">
             How will the money be distributed?
           </h2>
@@ -125,7 +153,7 @@ const App = () => {
             Don&apos;t trust us, trust the code. The prize DAI will be directly
             transferred to the smart contract address rsociety.eth.{" "}
             <a
-              href="https://optimistic.etherscan.io/address/0x41e727A4c19EEA4B7D0A079688268F3E74D4F6F0"
+              href="https://optimistic.etherscan.io/address/0x0841def9362c205a5f59a5e232d925fc7a8d8537"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:no-underline text-[#ffd200]"
