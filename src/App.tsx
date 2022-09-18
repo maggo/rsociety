@@ -153,12 +153,20 @@ const App = () => {
             Don&apos;t trust us, trust the code. The prize DAI will be directly
             transferred to the smart contract address rsociety.eth.{" "}
             <a
-              href="https://optimistic.etherscan.io/address/0x0841def9362c205a5f59a5e232d925fc7a8d8537"
+              href="https://optimistic.etherscan.io/address/0xFBF562a98aB8584178efDcFd09755FF9A1e7E3a2"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:no-underline text-[#ffd200]"
             >
-              You can read the contract code here.
+              You can read the contract code here,
+            </a>{" "}
+            <a
+              href="https://repo.sourcify.dev/contracts/full_match/10/0xFBF562a98aB8584178efDcFd09755FF9A1e7E3a2/sources/contracts/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline text-[#ffd200]"
+            >
+              and verify on SourcifyETH.
             </a>
             <br />
             TL;DR we can&apos;t withdraw the funds, only the addresses
