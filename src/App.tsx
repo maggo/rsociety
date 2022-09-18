@@ -8,15 +8,16 @@ const App = () => {
           className="w-16 lg:w-28 xl:w-36 h-auto xl:absolute top-0 right-0"
         />
         <div>
-          <h1 className="font-black uppercase text-4xl lg:text-6xl xl:text-9xl leading-none text-[#ffd200]">
+          <h1 className="font-black uppercase text-4xl lg:text-6xl xl:text-8xl leading-none text-[#ffd200]">
             LET&apos;S HACK ETHBERLIN.
             <br />
-            WITH RSOCIETY EVERYONE WINS.
+            WITH RSOCIETY <br />
+            EVERYONE WINS.
           </h1>
         </div>
       </div>
 
-      <p className="text-2xl md:text-4xl text-white font-bold mb-8">
+      <p className="text-2xl lg:text-4xl text-white font-bold mb-8">
         Let&apos;s make hackathon prize money a public good.
         <br />
         Everyone receives a $10+ share of the open track prize, guaranteed.
@@ -46,6 +47,14 @@ const App = () => {
         </div>
       </div>
       <div className="space-y-4 max-w-xl text-lg">
+        <div>
+          <h2 className="font-bold text-xl">What does rsociety mean?</h2>
+          <p>
+            We're building the <strong>r</strong>edistribution society. Everyone
+            should get their share! Could also mean <strong>OUR</strong>society
+            ;)
+          </p>
+        </div>
         <div>
           <h2 className="font-bold text-xl">Why should I vote for rsociety?</h2>
           <p>
@@ -78,6 +87,7 @@ const App = () => {
               href="https://github.com/ethb3rlin/attendees"
               target="_blank"
               rel="noopener noreferrer"
+              className="underline hover:no-underline"
             >
               public addresses for the 1,000 EtherCards
             </a>{" "}
@@ -101,19 +111,18 @@ const App = () => {
           <h2 className="font-bold text-xl">Why should I trust you?</h2>
           <p>
             Don&apos;t trust us, trust the code. The prize DAI will be directly
-            transferred to the smart contract address rsociety.eth. You can read
-            the contract code here (TODO)
+            transferred to the smart contract address rsociety.eth.{" "}
+            <a
+              href="https://optimistic.etherscan.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline"
+            >
+              You can read the contract code here.
+            </a>
             <br />
             TL;DR we can&apos;t withdraw the funds, only the addresses
             associated with the 1,000 EtherCards can.
-          </p>
-        </div>
-        <div>
-          <h2 className="font-bold text-xl">What does rsociety mean?</h2>
-          <p>
-            We're building the <strong>r</strong>edistribution society. Everyone
-            should get their share! Could also mean <strong>OUR</strong>society
-            ;)
           </p>
         </div>
       </div>
