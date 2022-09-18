@@ -116,7 +116,7 @@ const App = () => {
             Don&apos;t trust us, trust the code. The prize DAI will be directly
             transferred to the smart contract address rsociety.eth.{" "}
             <a
-              href="https://optimistic.etherscan.io/"
+              href="https://optimistic.etherscan.io/address/0x41e727A4c19EEA4B7D0A079688268F3E74D4F6F0"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:no-underline"
