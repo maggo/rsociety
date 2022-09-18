@@ -17,7 +17,7 @@ const App = () => {
         </div>
       </div>
 
-      <p className="text-2xl lg:text-4xl text-white font-bold mb-8">
+      <p className="text-1xl lg:text-3xl text-white font-bold mb-8">
         Let&apos;s make hackathon prize money a public good.
         <br />
         Everyone receives a $10+ share of the open track prize, guaranteed.
@@ -29,30 +29,33 @@ const App = () => {
           <div className="mb-2">Step 1</div>
           <a
             href="https://vote.ethberlin.ooo/2022"
-            className="block px-4 py-2 rounded-md text-base font-bold bg-yellow-300 text-black"
+            className="mx-auto block px-4 py-2 rounded-md text-base font-bold bg-yellow-300 text-black"
             target="_blank"
             rel="noreferrer noopener"
           >
             Vote here
           </a>
         </div>
-        <div className="text-base text-center">
+        <div className="text-base text-center group relative">
           <div className="mb-2">Step 2</div>
           <button
             disabled
-            className="block px-4 py-2 rounded-md text-base font-bold bg-gray-300 opacity-50 text-black pointer-events-none"
+            className="mx-auto block px-4 py-2 rounded-md text-base font-bold bg-gray-300 opacity-50 text-black pointer-events-none"
           >
             Claim your share
           </button>
+          <span className="text-xs hidden group-hover:block p-2 bg-slate-800 text-white absolute top-full mt-2 w-[120%] left-1/2 -translate-x-1/2">
+            Will be enabled when we win!
+          </span>
         </div>
       </div>
       <div className="space-y-4 max-w-xl text-lg">
         <div>
           <h2 className="font-bold text-xl">What does rsociety mean?</h2>
           <p>
-            We're building the <strong>r</strong>edistribution society. Everyone
-            should get their share! Could also mean <strong>OUR</strong>society
-            ;)
+            We're building the <strong className="text-[#ffd200]">r</strong>
+            edistribution society. Everyone should get their share! Could also
+            mean <strong className="text-[#ffd200]">OUR</strong>society ;)
           </p>
         </div>
         <div>
