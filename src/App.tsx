@@ -49,6 +49,16 @@ const App = () => {
           </span>
         </div>
       </div>
+      <p className="text-1xl lg:text-3xl text-white font-bold mb-8">
+        <a
+          href="https://devfolio.co/projects/rsociety-hack-ethberlin-and-receive-dai-d240"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:no-underline text-[#ffd200]"
+        >
+          Check out our hack on Devfolio.
+        </a>
+      </p>
       <div className="space-y-4 max-w-xl text-lg">
         <div>
           <h2 className="font-bold text-xl">What does rsociety mean?</h2>
