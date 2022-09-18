@@ -55,7 +55,16 @@ const App = () => {
           <p>
             We're building the <strong className="text-[#ffd200]">r</strong>
             edistribution society. Everyone should get their share! Could also
-            mean <strong className="text-[#ffd200]">OUR</strong>society ;)
+            mean <strong className="text-[#ffd200]">OUR</strong>society ;){" "}
+            <a
+              href="https://twitter.com/rsocietyeth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline text-[#ffd200]"
+            >
+              Follow us on twitter
+            </a>
+            !
           </p>
         </div>
         <div>
@@ -77,7 +86,7 @@ const App = () => {
             money will be sent directly to the rsociety.eth smart contract. From
             there everyone with an EtherCard (the one you received with your
             badge) can claim their $10+ DAI share of the pool. Any unclaimed
-            assets will be distributed evenly and airdropped to claim00rs
+            assets will be distributed evenly and airdropped to claim00rs.
           </p>
         </div>
         <div>
@@ -90,7 +99,7 @@ const App = () => {
               href="https://github.com/ethb3rlin/attendees"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:no-underline"
+              className="underline hover:no-underline text-[#ffd200]"
             >
               public addresses for the 1,000 EtherCards
             </a>{" "}
@@ -119,7 +128,7 @@ const App = () => {
               href="https://optimistic.etherscan.io/address/0x41e727A4c19EEA4B7D0A079688268F3E74D4F6F0"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:no-underline"
+              className="underline hover:no-underline text-[#ffd200]"
             >
               You can read the contract code here.
             </a>
