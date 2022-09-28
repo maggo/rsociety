@@ -1,3 +1,5 @@
+import { Claim } from "./Claim";
+
 const App = () => {
   return (
     <div className="p-6">
@@ -59,6 +61,7 @@ const App = () => {
           Check out our hack on Devfolio.
         </a>
       </p>
+      <Claim />
       <div className="space-y-4 max-w-xl text-lg">
         <div>
           <h2 className="font-bold text-xl">What does rsociety mean?</h2>
