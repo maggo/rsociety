@@ -15,6 +15,8 @@ import { ethers } from "ethers";
 
 const merkleAddresses = attendees.map((a) => a.address);
 
+const CONTRACT = "0xFBF562a98aB8584178efDcFd09755FF9A1e7E3a2";
+
 const merkleTree = new MerkleTree(merkleAddresses, hashAddress, {
   sort: true,
   hashLeaves: true,
@@ -83,13 +85,13 @@ function CanClaim() {
   const unsupportedNetwork = !!chain && chain.unsupported;
 
   const { data: isClaimable } = useContractRead({
-    addressOrName: "0x35F37545a95967a677402E45D2e3e5158f8E5852",
+    addressOrName: CONTRACT,
     contractInterface: abi,
     functionName: "isClaimable",
   });
 
   const { data: hasClaimed } = useContractRead({
-    addressOrName: "0x35F37545a95967a677402E45D2e3e5158f8E5852",
+    addressOrName: CONTRACT,
     contractInterface: abi,
     functionName: "hasClaimed",
     args: address,
@@ -145,13 +147,35 @@ function ClaimShare() {
     : undefined;
 
   const { config } = usePrepareContractWrite({
-    addressOrName: "0x35F37545a95967a677402E45D2e3e5158f8E5852",
+    addressOrName: CONTRACT,
     contractInterface: abi,
     functionName: "claim",
     args: [proof],
   });
 
   const { data, isLoading, isSuccess, write } = useContractWrite(config);
+
+  if (isSuccess) {
+    return (
+      <div>
+        {chain?.blockExplorers?.default ? (
+          <a
+            className="underline decoration-dotted hover:no-underline"
+            href={`${chain?.blockExplorers?.default.url}/tx/${data?.hash}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Done 🥳 Check transaction on {chain?.blockExplorers?.default?.name}
+          </a>
+        ) : (
+          <div>
+            Transaction ID:
+            <div className="break-all">{data?.hash}</div>
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -160,28 +184,9 @@ function ClaimShare() {
         disabled={!write}
         onClick={() => write?.()}
       >
-        Claim
+        Claim your $10 💸
       </button>
       {isLoading && <div className="text-sm">Check wallet for transaction</div>}
-      {isSuccess && (
-        <div>
-          {chain?.blockExplorers?.default ? (
-            <a
-              className="underline decoration-dotted hover:no-underline"
-              href={`${chain?.blockExplorers?.default.url}/tx/${data?.hash}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Check on {chain?.blockExplorers?.default?.name}
-            </a>
-          ) : (
-            <div>
-              Transaction ID:
-              <div className="break-all">{data?.hash}</div>
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 }

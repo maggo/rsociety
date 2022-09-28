@@ -3,7 +3,7 @@ import { publicProvider } from "wagmi/providers/public";
 import { InjectedConnector } from "wagmi/connectors/injected";
 
 const { chains, provider, webSocketProvider } = configureChains(
-  [chain.goerli],
+  [chain.optimism],
   [publicProvider()]
 );
 
