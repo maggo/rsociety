@@ -1,3 +1,5 @@
+import { Claim } from "./Claim";
+
 const App = () => {
   return (
     <div className="p-6">
@@ -24,41 +26,36 @@ const App = () => {
         <br />
         We just need to win the vote. #hackthehack
       </p>
-      <div className="mb-16 md:text-3xl flex gap-8">
-        <div className="text-base text-center">
-          <div className="mb-2">Step 1</div>
+      <div>
+        <h2 className="text-5xl font-bold text-[#ffd200] mb-4">
+          WE WON <span className="animate-bounce inline-block">🎉</span>
+        </h2>
+        <p className="text-1xl lg:text-3xl text-white font-bold mb-8">
           <a
-            href="https://vote.ethberlin.ooo/2022"
-            className="mx-auto block px-4 py-2 rounded-md text-base font-bold bg-yellow-300 text-black"
+            href="https://devfolio.co/projects/rsociety-hack-ethberlin-and-receive-dai-d240"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
+            className="underline hover:no-underline text-[#ffd200]"
           >
-            Vote here
+            Check out our hack on Devfolio
+          </a>{" "}
+          &{" "}
+          <a
+            href="https://vote.ethberlin.ooo/2022/proposal/QmeqNwLod9x4z6QGAgH3CLX4Zob9ZrK4E9KeVbSB7Gbs7M"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:no-underline text-[#ffd200]"
+          >
+            Vote results
           </a>
-        </div>
-        <div className="text-base text-center group relative">
-          <div className="mb-2">Step 2</div>
-          <button
-            disabled
-            className="mx-auto block px-4 py-2 rounded-md text-base font-bold bg-gray-300 opacity-50 text-black pointer-events-none"
-          >
-            Claim your share
-          </button>
-          <span className="text-xs hidden group-hover:block p-2 bg-slate-800 text-white absolute top-full mt-2 w-[120%] left-1/2 -translate-x-1/2">
-            Will be enabled when we win!
-          </span>
+        </p>
+        <img src="./wewon.gif" alt="" className="mb-4" />
+        <div className="bg-opacity-10 bg-gray-50 p-4 rounded-lg">
+          <p className="mb-4">Claim your share:</p>
+          <Claim />
         </div>
       </div>
-      <p className="text-1xl lg:text-3xl text-white font-bold mb-8">
-        <a
-          href="https://devfolio.co/projects/rsociety-hack-ethberlin-and-receive-dai-d240"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:no-underline text-[#ffd200]"
-        >
-          Check out our hack on Devfolio.
-        </a>
-      </p>
+      <hr className="my-8" />
       <div className="space-y-4 max-w-xl text-lg">
         <div>
           <h2 className="font-bold text-xl">What does rsociety mean?</h2>
