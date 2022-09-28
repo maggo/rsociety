@@ -3,7 +3,10 @@ import {
   useConnect,
   useContractRead,
   useContractWrite,
+  useDisconnect,
+  useNetwork,
   usePrepareContractWrite,
+  useSwitchNetwork,
 } from "wagmi";
 import { abi } from "./abi";
 import attendees from "./attendees.json";
@@ -22,19 +25,30 @@ function hashAddress(address: string) {
 }
 
 export function Claim() {
-  const { connector: activeConnector, isConnected } = useAccount();
+  const { chain } = useNetwork();
+  const { isConnected } = useAccount();
   const { connect, connectors, error, isLoading, pendingConnector } =
     useConnect();
+
+  const { disconnect } = useDisconnect();
 
   const { address } = useAccount();
 
   return (
-    <div className="mb-8">
-      <CanClaim />
+    <div>
       {isConnected ? (
-        <div>
-          Connected to {activeConnector?.name} as {address}
-        </div>
+        <>
+          <div className="text-sm mb-2">
+            Connected as {address} on {chain?.name}{" "}
+            <button
+              className="underline decoration-dotted"
+              onClick={() => disconnect()}
+            >
+              Disconnect?
+            </button>
+          </div>
+          <CanClaim />
+        </>
       ) : (
         connectors.map((connector) => (
           <button
@@ -58,12 +72,17 @@ export function Claim() {
 }
 
 function CanClaim() {
-  const { address, isConnected } = useAccount();
+  const { chain } = useNetwork();
+  const { address } = useAccount();
+  const { switchNetwork, chains } = useSwitchNetwork();
+
   const proof = address
     ? merkleTree.getHexProof(hashAddress(address))
     : undefined;
 
-  const { data } = useContractRead({
+  const unsupportedNetwork = !!chain && chain.unsupported;
+
+  const { data: isClaimable } = useContractRead({
     addressOrName: "0x35F37545a95967a677402E45D2e3e5158f8E5852",
     contractInterface: abi,
     functionName: "isClaimable",
@@ -77,17 +96,49 @@ function CanClaim() {
     enabled: !!address,
   });
 
-  return (
-    <div>
-      <p>Can Claim: {data?.toString()}</p>
-      <p>Has Claimed: {hasClaimed?.toString()}</p>
-      <p>Proof: {proof?.toString()}</p>
-      <ClaimShare />
-    </div>
-  );
+  if (unsupportedNetwork) {
+    return (
+      <div>
+        Wrong chain!{" "}
+        <button
+          onClick={() => switchNetwork?.(chains[0].id)}
+          className="underline decoration-dotted decoration-slate-400 hover:no-underline"
+        >
+          Switch Network to {chains[0].name}?
+        </button>
+      </div>
+    );
+  }
+
+  if (!isClaimable) {
+    return (
+      <div>
+        Oops looks like claims are not available! Check twitter for info
+        @rsocietyeth
+      </div>
+    );
+  }
+
+  if (!proof?.length) {
+    return (
+      <div>
+        Oops, looks like your account is not eligible. <br />
+        Make sure that you're connected with your EtherCard wallet!
+      </div>
+    );
+  }
+
+  if (hasClaimed) {
+    return (
+      <div>You've claimed your share already! Have fun with your money 💸</div>
+    );
+  }
+
+  return <ClaimShare />;
 }
 
 function ClaimShare() {
+  const { chain } = useNetwork();
   const { address } = useAccount();
   const proof = address
     ? merkleTree.getHexProof(hashAddress(address))
@@ -97,21 +148,40 @@ function ClaimShare() {
     addressOrName: "0x35F37545a95967a677402E45D2e3e5158f8E5852",
     contractInterface: abi,
     functionName: "claim",
-    args: proof,
+    args: [proof],
   });
+
   const { data, isLoading, isSuccess, write } = useContractWrite(config);
 
   return (
     <div>
       <button
-        className="px-4 py-2 bg-yellow-300 text-black rounded-md"
+        className="px-4 py-2 bg-yellow-300 text-black rounded-md disabled:opacity-50"
         disabled={!write}
         onClick={() => write?.()}
       >
         Claim
       </button>
-      {isLoading && <div>Check Wallet</div>}
-      {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
+      {isLoading && <div className="text-sm">Check wallet for transaction</div>}
+      {isSuccess && (
+        <div>
+          {chain?.blockExplorers?.default ? (
+            <a
+              className="underline decoration-dotted hover:no-underline"
+              href={`${chain?.blockExplorers?.default.url}/tx/${data?.hash}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Check on {chain?.blockExplorers?.default?.name}
+            </a>
+          ) : (
+            <div>
+              Transaction ID:
+              <div className="break-all">{data?.hash}</div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

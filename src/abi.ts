@@ -1,31 +1,14 @@
 export const abi = [
   {
     inputs: [
-      {
-        internalType: "address",
-        name: "daiAddress",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "totalParticipants_",
-        type: "uint256",
-      },
+      { internalType: "address", name: "daiAddress", type: "address" },
+      { internalType: "uint256", name: "totalParticipants_", type: "uint256" },
       {
         internalType: "uint256",
         name: "expectedDaiWinnings_",
         type: "uint256",
       },
-      {
-        internalType: "uint256",
-        name: "claimExpiryTimestamp_",
-        type: "uint256",
-      },
-      {
-        internalType: "bytes32",
-        name: "merkleRoot",
-        type: "bytes32",
-      },
+      { internalType: "bytes32", name: "merkleRoot", type: "bytes32" },
     ],
     stateMutability: "nonpayable",
     type: "constructor",
@@ -50,13 +33,7 @@ export const abi = [
     type: "event",
   },
   {
-    inputs: [
-      {
-        internalType: "bytes32[]",
-        name: "proof",
-        type: "bytes32[]",
-      },
-    ],
+    inputs: [{ internalType: "bytes32[]", name: "proof", type: "bytes32[]" }],
     name: "claim",
     outputs: [],
     stateMutability: "nonpayable",
@@ -65,129 +42,63 @@ export const abi = [
   {
     inputs: [],
     name: "claimExpiryTimestamp",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    inputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     name: "claimooors",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "dai",
-    outputs: [
-      {
-        internalType: "contract ERC20",
-        name: "",
-        type: "address",
-      },
-    ],
+    outputs: [{ internalType: "contract ERC20", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "expectedDaiWinnings",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "getNumClaimooors",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
+    inputs: [{ internalType: "address", name: "", type: "address" }],
     name: "hasClaimed",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "isClaimable",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "merkleRoot",
-    outputs: [
-      {
-        internalType: "bytes32",
-        name: "",
-        type: "bytes32",
-      },
-    ],
+    outputs: [{ internalType: "bytes32", name: "", type: "bytes32" }],
     stateMutability: "view",
     type: "function",
   },
   {
     inputs: [],
     name: "owner",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
+    outputs: [{ internalType: "address", name: "", type: "address" }],
     stateMutability: "view",
     type: "function",
   },
@@ -214,11 +125,7 @@ export const abi = [
   },
   {
     inputs: [
-      {
-        internalType: "address",
-        name: "tokenAddress",
-        type: "address",
-      },
+      { internalType: "address", name: "tokenAddress", type: "address" },
     ],
     name: "rescueTokens",
     outputs: [],
@@ -227,25 +134,20 @@ export const abi = [
   },
   {
     inputs: [],
+    name: "startClaimTimer",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
     name: "totalParticipants",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
+    outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
     stateMutability: "view",
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
-      },
-    ],
+    inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
     name: "transferOwnership",
     outputs: [],
     stateMutability: "nonpayable",
@@ -253,25 +155,11 @@ export const abi = [
   },
   {
     inputs: [
-      {
-        internalType: "bytes32",
-        name: "leaf",
-        type: "bytes32",
-      },
-      {
-        internalType: "bytes32[]",
-        name: "proof",
-        type: "bytes32[]",
-      },
+      { internalType: "bytes32", name: "leaf", type: "bytes32" },
+      { internalType: "bytes32[]", name: "proof", type: "bytes32[]" },
     ],
     name: "verifyMerkleProof",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
+    outputs: [{ internalType: "bool", name: "", type: "bool" }],
     stateMutability: "view",
     type: "function",
   },
